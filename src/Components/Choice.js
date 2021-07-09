@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const ChoiceA = () => {
+const Choice = () => {
     return (
-        <></>
+        <button></button>
     )
 }
 
-export default ChoiceA;
+export default Choice;

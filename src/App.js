@@ -12,8 +12,6 @@ function App() {
       <Title/>
       <Instructions/>
       <GameDiv/>
-      <Choice/>
-      <Choice/>
     </div>
   );
 }

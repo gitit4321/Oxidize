@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-const GameDiv = () => {
+const ChoiceA = () => {
     return (
         <></>
-
     )
 }
 
-export default GameDiv;
+export default ChoiceA;

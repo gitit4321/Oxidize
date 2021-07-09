@@ -1,43 +1,19 @@
 //import './App.css';
 import React from 'react'
-
-const Title = () => {
-  return (
-    <h1>
-      Title
-    </h1>
-  )
-}
-
-const Instructions = () => {
-  return (
-    <h3>
-      Make a choice and live with the consequences
-    </h3>
-  )
-}
-
-
-const GameDiv = () => {
-  return (
-    <></>
-
-  )
-}
-
-const ChoiceA = () => {
-  return (
-    <></>
-  )
-}
-
-
+import Choice from './Components/Choice'
+import GameDiv from './Components/GameDiv'
+import Instructions from './Components/Instructions'
+import Title from './Components/Title'
 
 
 function App() {
   return (
     <div className="App">
-      Hello World
+      <Title/>
+      <Instructions/>
+      <GameDiv/>
+      <Choice/>
+      <Choice/>
     </div>
   );
 }

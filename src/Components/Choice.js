@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Choice = (props) => {
     return (
-        <button>{props.value}</button>
+        <button onClick={props.click}>{props.value}</button>
     )
 }
 

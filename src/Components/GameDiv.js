@@ -10,13 +10,13 @@ const GameDiv = () => {
     });
 
     let handleWrongAnswer = () => {
-       
+        setGameState(gameState + 1)
     }
 
     return (
         <div>
-            <Choice onClick={() =>  setGameState(gameState + 1)} value="Button A"/>
-            <Choice value="Button B"/>
+            <Choice click={handleWrongAnswer} value="Button A" />
+            <Choice value="Button B" />
             <p>lives = {gameState}</p>
         </div>
 

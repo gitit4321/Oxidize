@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const Choice = () => {
+const Choice = (props) => {
     return (
-        <button></button>
+        <button>{props.value}</button>
     )
 }
 

@@ -127,7 +127,6 @@ const MathGame = (props) => {
             <>
                 <div>
                 <p>What is the sum of all the digits?</p>
-                <p></p>
                 <Countdown handleFailure={props.handleFailure} lostGame={setGameLost}/>
                 <h2>{sequence}</h2>
                 <Choice value={multipleChoice[0]} click={checkAnswer}/>
@@ -140,8 +139,10 @@ const MathGame = (props) => {
         return (
             <>
                 <div>
-                <p>Prepare to add the numbers. You must answer within the alloted time... or else!</p>
-                <button className='choice-btn' onClick={startGame}>Begin</button>
+                <p>Prepare to add the numbers. You must answer within the alloted time... or else...</p>
+                <div>
+                    <button className='choice-btn' onClick={startGame}>Begin</button>
+                </div>
                 </div>
             </>
         );

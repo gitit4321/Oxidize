@@ -9,7 +9,7 @@ const Countdown = (props) => {
             const timer = setTimeout(() => setTimeRemaining(timeRemaining - 1), 1000);
             return () => clearTimeout(timer);
         } else {
-            setTimeRemaining("You Lose!");
+            setTimeRemaining("You Lose");
             return
         }
     }, [timeRemaining]);

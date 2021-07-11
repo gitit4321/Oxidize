@@ -80,6 +80,7 @@ const MathGame = (props) => {
         if (event.target.value == sum) {
             setGameWon(true);
         } else {
+            props.handleFailure();
             setGameLost(true);
         }
     }
@@ -93,7 +94,7 @@ const MathGame = (props) => {
         return (
             <>
                 <p>Congratulations, you've won this round...</p>
-                <Choice value="Continue"/>
+                <Choice value="Continue" click={props.counter}/>
                 {/* 
                 !!!!!!!!!!!!!!!!!!!!!!
 
@@ -118,7 +119,7 @@ const MathGame = (props) => {
                 <p></p>
                 <Countdown/>
                 <h2>{sequence}</h2>
-                <Choice value={multipleChoice[0]} click={checkAnswer} />
+                <Choice value={multipleChoice[0]} click={checkAnswer}/>
                 <Choice value={multipleChoice[1]} click={checkAnswer}/>
                 <Choice value={multipleChoice[2]} click={checkAnswer}/>
             </>
@@ -131,7 +132,6 @@ const MathGame = (props) => {
             </>
         );
     }
-
 }
 
 export default MathGame;

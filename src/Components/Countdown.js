@@ -14,8 +14,13 @@ const Countdown = (props) => {
         }
     }, [timeRemaining]);
 
+    if (timeRemaining == 0) {
+        props.handleFailure();
+        props.lostGame(true);
+    }
+
     return (
-        <p>{timeRemaining}</p>
+        <p>Time Remaining: {timeRemaining}</p>
     );
 
 }

@@ -92,8 +92,10 @@ const MathGame = (props) => {
     if(gameWon){
         return (
             <>
+                <div>
                 <p>Congratulations, you've won this round...</p>
                 <Choice value="Continue" click={props.counter}/>
+                </div>
                 {/* 
                 !!!!!!!!!!!!!!!!!!!!!!
 
@@ -107,13 +109,16 @@ const MathGame = (props) => {
 
     if(gameLost){
         return (
+            <div>
             <p>Wow, you lost!!!!</p>
+            </div>
         );
     }
 
     if (gameStarted) {
         return (
             <>
+                <div>
                 <p>What is the sum of all the numbers?</p>
                 <p></p>
                 <Countdown/>
@@ -121,13 +126,16 @@ const MathGame = (props) => {
                 <Choice value={multipleChoice[0]} click={checkAnswer}/>
                 <Choice value={multipleChoice[1]} click={checkAnswer}/>
                 <Choice value={multipleChoice[2]} click={checkAnswer}/>
+                </div>
             </>
         );
     } else {
         return (
             <>
+                <div>
                 <p>Prepare to add the numbers. You must answer within the alloted time... or else!</p>
-                <button onClick={startGame}>Begin</button>
+                <button className='choice-btn' onClick={startGame}>Begin</button>
+                </div>
             </>
         );
     }

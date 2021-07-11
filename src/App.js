@@ -1,4 +1,4 @@
-//import './App.css';
+import './App.css';
 import React from 'react'
 import Choice from './Components/Choice'
 import GameDiv from './Components/GameDiv'

@@ -13,7 +13,7 @@ class Board extends React.Component {
   renderSquare(i) {
     let squareImg;
     if (this.props.cardArray[i]['isFaceDown']) {
-      squareImg = 'blank';
+      squareImg = 'ring';
     } else {
       squareImg = this.props.cardArray[i]['name'];
     }
@@ -51,54 +51,54 @@ class MemoryGame extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: 'Find all the matches!',
+      status: 'Find all the matches...',
       cardArray: [
         {
-          name: 'cheeseburger',
+          name: 'golem',
           isFaceDown: true,
         },
         {
-          name: 'cheeseburger',
+          name: 'golem',
           isFaceDown: true,
         },
         {
-          name: 'fries',
+          name: 'legolas',
           isFaceDown: true,
         },
         {
-          name: 'fries',
+          name: 'legolas',
           isFaceDown: true,
         },
         {
-          name: 'hotdog',
+          name: 'gandalf',
           isFaceDown: true,
         },
         {
-          name: 'hotdog',
+          name: 'gandalf',
           isFaceDown: true,
         },
         {
-          name: 'ice-cream',
+          name: 'eye',
           isFaceDown: true,
         },
         {
-          name: 'ice-cream',
+          name: 'eye',
           isFaceDown: true,
         },
         {
-          name: 'milkshake',
+          name: 'smaug',
           isFaceDown: true,
         },
         {
-          name: 'milkshake',
+          name: 'smaug',
           isFaceDown: true,
         },
         {
-          name: 'pizza',
+          name: 'frodo',
           isFaceDown: true,
         },
         {
-          name: 'pizza',
+          name: 'frodo',
           isFaceDown: true,
         },
       ],
@@ -116,11 +116,10 @@ class MemoryGame extends React.Component {
     const cardsWon = this.state.cardsWon.slice();
     let status = this.state.status;
 
-    console.log(cardsChosen);
     if (cardsChosen1 === cardsChosen2) {
       alert('You found a match!');
-      cardArray[id1]['name'] = 'white';
-      cardArray[id2]['name'] = 'white';
+      // cardArray[id1]['name'] = 'name';
+      // cardArray[id2]['name'] = 'name';
       cardsWon.push(cardsChosen1);
     } else {
       cardArray[id1]['isFaceDown'] = true;
@@ -129,12 +128,7 @@ class MemoryGame extends React.Component {
       this.props.handleFailure()
     }
 
-     if (cardsWon.length === cardArray.length / 2) {
-       status = 'Congratulations, you win!';
-       this.props.counter()
-     }
-
-    if (cardsWon.length === 1) {
+    if (cardsWon.length === cardArray.length / 2) {
       status = 'Congratulations, you win!';
       this.props.counter()
     }

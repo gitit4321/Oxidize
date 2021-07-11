@@ -47,7 +47,7 @@ const GameDiv = props => {
         choiceBValue="Continue onwards"
         handleFailure={handleWrongAnswer} 
         counter={countUp} />,
-    <Scenario prompt="A mage appears before you. 'You must play my card game to pass!' he says. Shall you play?" 
+    <Scenario prompt="A mage appears before you. 'You must play my card game to pass' he says. Shall you play?" 
         choiceAValue="Flee home"
         choiceBValue="Accept his offer"
         handleFailure={handleWrongAnswer} 
@@ -64,7 +64,7 @@ const GameDiv = props => {
         handleFailure={handleWrongAnswer} 
         counter={countUp} />,
     <MathGame handleFailure={handleWrongAnswer} counter={countUp} />,
-    <Scenario prompt="Well done! You've come all the way to Mount Doom. Shall you cast the Ring into the fire?" 
+    <Scenario prompt="Well done. You've come all the way to Mount Doom. Shall you cast the Ring into the fire?" 
         choiceAValue="Keep the Ring"
         choiceBValue="Cast the Ring into the fire"
         handleFailure={handleWrongAnswer} 
@@ -82,7 +82,7 @@ const GameDiv = props => {
             <div className="scenarios">
                 {scenarioChanger(counter, scarr)}
             </div>
-            <h4>lives remaining= {lives}</h4>
+            <h4>lives remaining = {lives}</h4>
         </div>
     );
 };

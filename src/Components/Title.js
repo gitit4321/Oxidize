@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Title = (props) => {
     return (
       <h1>
-        Title
+        Frodo's Nine Lives
       </h1>
     )
   }

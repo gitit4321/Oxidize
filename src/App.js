@@ -13,7 +13,6 @@ function App() {
       <Title />
       <Instructions />
       <GameDiv />
-      <LightGame />
 
 
     </div>

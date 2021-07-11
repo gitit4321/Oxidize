@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Choice from './Choice';
+import LightGame from './LightGame';
 import MathGame from './MathGame';
 import Scenario1 from './Scenario1';
 import Scenario2 from './Scenario2';
+import MemoryGame from './MemoryGame';
 
 const GameDiv = props => {
     const [gameState, setGameState] = useState(9);
@@ -13,7 +15,7 @@ const GameDiv = props => {
         setGameState(gameState - 1)
     }
 
-    let scarr = [<Scenario1 />, <Scenario2 />]
+    let scarr = [<Scenario1 />, <Scenario2 />, <LightGame handleFailure={handleWrongAnswer} />, <MathGame />, <MemoryGame />]
     const scenarioChanger = (index, arr) => {
         return arr[index]
     }

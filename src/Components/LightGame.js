@@ -5,11 +5,12 @@ const Node = (props) => {
     return (
         <button className="node" onClick={props.click}>
             {props.value}
+            {props.fail}
         </button>
     )
 }
 
-const Board = () => {
+const Board = (props) => {
 
     const [nodeValue, setValue] = useState(Array(10).fill('X'));
 
@@ -33,6 +34,7 @@ const Board = () => {
         if (newState[i] === 'O') {
             alert('Nice One!')
         }
+        else { props.handleFailure() }
     }
 
     const renderNode = (i) => {
@@ -64,11 +66,11 @@ const Board = () => {
     )
 }
 
-const LightGame = () => {
+const LightGame = (props) => {
     return (
         <div className="game">
             <div className="game-board">
-                <Board />
+                <Board handleFailure={props.handleFailure} />
             </div>
             <div className="game-info">
                 <div>{/*status */}</div>

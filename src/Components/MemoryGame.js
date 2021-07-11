@@ -111,7 +111,7 @@ class MemoryGame extends React.Component {
 
   checkForMatch(id1, id2, cardsChosen1, cardsChosen2) {
     const cardArray = this.state.cardArray.slice();
-    const cardsChosen = this.state.cardsChosen.slice();
+    // const cardsChosen = this.state.cardsChosen.slice();
     const cardsWon = this.state.cardsWon.slice();
     let status = this.state.status;
 

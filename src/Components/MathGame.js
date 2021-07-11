@@ -1,23 +1,16 @@
-import React, {useEffect, useState, useLayoutEffect} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import Choice from "./Choice";
+import Countdown from "./Countdown"
 
 const MathGame = (props) => {
 
     const [sequence, setSequence] = useState([]);
     const [sum, setSum] = useState(0)
-    const [countdown, setCountdown] = useState(15);
     const [multipleChoice, setMultipleChoice] = useState([]);
     const [gameStarted, setGameStarted] = useState(false);
-
-
-    useEffect(() => {
-        if (countdown > 0) {
-            setTimeout(() => setCountdown(countdown - 1), 1000);
-        } else {
-            setCountdown("You Lose!");
-            return
-        }
-    }, [countdown]);
+    const [gameWon, setGameWon] = useState(false);
+    const [gameLost, setGameLost] = useState(false);
+    const [userAnswer, setUserAnswer] = useState();
 
     useEffect(() => {
         calculateSum();
@@ -82,9 +75,40 @@ const MathGame = (props) => {
 
     }
 
+    const checkAnswer = (event) => {
+        console.log(event.target.value);
+        if (event.target.value == sum) {
+            setGameWon(true);
+        } else {
+            setGameLost(true);
+        }
+    }
+
     const startGame = () => {
         createGame();
         setGameStarted(true);
+    }
+
+    if(gameWon){
+        return (
+            <>
+                <p>Congratulations, you've won this round...</p>
+                <Choice value="Continue"/>
+                {/* 
+                !!!!!!!!!!!!!!!!!!!!!!
+
+                We need to add a callback to continue to next scenario here
+                
+                !!!!!!!!!!!!!!!!!!!!!!
+                */}
+            </>
+        );
+    }
+
+    if(gameLost){
+        return (
+            <p>Wow, you lost!!!!</p>
+        );
     }
 
     if (gameStarted) {
@@ -92,18 +116,18 @@ const MathGame = (props) => {
             <>
                 <p>What is the sum of all the numbers?</p>
                 <p></p>
-                <p>{countdown}</p>
+                <Countdown/>
                 <h2>{sequence}</h2>
-                <Choice value={multipleChoice[0]} />
-                <Choice value={multipleChoice[1]} />
-                <Choice value={multipleChoice[2]} />
+                <Choice value={multipleChoice[0]} click={checkAnswer} />
+                <Choice value={multipleChoice[1]} click={checkAnswer}/>
+                <Choice value={multipleChoice[2]} click={checkAnswer}/>
             </>
         );
     } else {
         return (
             <>
                 <p>Prepare to add the numbers. You must answer within the alloted time... or else!</p>
-                <button onClick={startGame}>Start Game</button>
+                <button onClick={startGame}>Begin</button>
             </>
         );
     }

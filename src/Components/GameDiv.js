@@ -11,15 +11,15 @@ const GameDiv = props => {
     const [lives, setLives] = useState(9);
     // const [scenarios, setScenarios] = useState([<Scenario1 />, <Scenario2 />])
     const [counter, setCount] = useState(0);
-    
+
+    useEffect(() => {
+        if (lives == 0) {
+            setCount(scarr.length - 1);
+        } 
+    }, [lives]);
 
     let handleWrongAnswer = () => {
-        if(lives == 1) {
-            setLives(lives - 1);
-            setCount(scarr.length - 1);
-        } else{
-            setLives(lives - 1);
-        }
+        setLives(lives - 1);
     }
 
     const countUp = () => {
@@ -29,6 +29,10 @@ const GameDiv = props => {
     const restartGame = () => {
         setLives(9);
         setCount(0);
+    }
+
+    const automaticLoss = () => {
+        setLives(0);
     }
 
     let scarr = [<Scenario prompt="Gandalf offers you the One Ring. It is cool to the touch and dark script can be seen around it's edges." 
@@ -67,7 +71,7 @@ const GameDiv = props => {
     <Scenario prompt="Well done. You've come all the way to Mount Doom. Shall you cast the Ring into the fire?" 
         choiceAValue="Keep the Ring"
         choiceBValue="Cast the Ring into the fire"
-        handleFailure={handleWrongAnswer} 
+        handleFailure={automaticLoss} 
         counter={countUp}/>,
     <GameWon restart={restartGame}/>,
     <GameOver restart={restartGame}/>

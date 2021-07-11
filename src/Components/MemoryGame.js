@@ -1,5 +1,4 @@
 import React from 'react';
-import './MemoryGame.css';
 
 function Square(props) {
   return (

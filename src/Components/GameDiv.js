@@ -48,7 +48,7 @@ const GameDiv = props => {
             <div className="scenarios">
                 {scenarioChanger(counter, scarr)}
             </div>
-            <p>lives = {lives}</p>
+            <h4>lives remaining= {lives}</h4>
         </div>
     );
 };

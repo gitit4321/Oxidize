@@ -45,8 +45,8 @@ const Board = (props) => {
 
     const message = 'Kill the Troll by clicking the ring!';
     return (
-        <div>
-            {message}
+        <div className='lightbar-game-container'>
+            <h4>{message}</h4>
             <div className='start-container'>
                 <button className="start choice-btn" onClick={lightChanger}>Start</button>
             </div>

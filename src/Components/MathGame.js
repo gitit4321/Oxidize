@@ -126,12 +126,14 @@ const MathGame = (props) => {
         return (
             <>
                 <div>
-                <p>What is the sum of all the digits?</p>
-                <Countdown handleFailure={props.handleFailure} lostGame={setGameLost}/>
-                <h2>{sequence}</h2>
-                <Choice value={multipleChoice[0]} click={checkAnswer}/>
-                <Choice value={multipleChoice[1]} click={checkAnswer}/>
-                <Choice value={multipleChoice[2]} click={checkAnswer}/>
+                    <p>What is the sum of all the digits?</p>
+                    <Countdown handleFailure={props.handleFailure} lostGame={setGameLost}/>
+                    <h2>{sequence}</h2>
+                    <div className="choice-container">
+                        <Choice value={multipleChoice[0]} click={checkAnswer}/>
+                        <Choice value={multipleChoice[1]} click={checkAnswer}/>
+                        <Choice value={multipleChoice[2]} click={checkAnswer}/>
+                    </div>
                 </div>
             </>
         );

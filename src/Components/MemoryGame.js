@@ -126,10 +126,12 @@ class MemoryGame extends React.Component {
       cardArray[id1]['isFaceDown'] = true;
       cardArray[id2]['isFaceDown'] = true;
       alert('Sorry, try again.');
+      this.props.handleFailure()
     }
 
     if (cardsWon.length === cardArray.length / 2) {
       status = 'Congratulations, you win!';
+      this.props.counter()
     }
 
     this.setState({

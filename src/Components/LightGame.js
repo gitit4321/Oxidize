@@ -4,22 +4,23 @@ import React, { useState } from 'react';
 const Node = (props) => {
     return (
         <button className="node" onClick={props.click}>
-            {props.value}
+            {/* {props.value} */}
             {props.fail}
+            <img src={`/images/${props.value}.png`}></img>
         </button>
     )
 }
 
 const Board = (props) => {
 
-    const [nodeValue, setValue] = useState(Array(10).fill('X'));
+    const [nodeValue, setValue] = useState(Array(10).fill('eye'));
 
     const lightChanger = () => {
         let interarr = [230, 240, 210, 230, 220, 210, 236, 268, 200, 230];
         let i = 0;
         let changeState = () => {
             let newState = nodeValue.slice();
-            newState[i] = 'O'
+            newState[i] = 'ring'
             setValue(newState)
         }
         setInterval(() => {
@@ -31,7 +32,7 @@ const Board = (props) => {
 
     const handleClick = (i) => {
         const newState = nodeValue.slice();
-        if (newState[i] === 'O') {
+        if (newState[i] === 'ring') {
             alert('Nice One!');
             props.counter();
         }
@@ -46,8 +47,8 @@ const Board = (props) => {
     return (
         <div>
             {message}
-            <div>
-                <button className="start" onClick={lightChanger}>Start</button>
+            <div className='start-container'>
+                <button className="start choice-btn" onClick={lightChanger}>Start</button>
             </div>
             <div className="lightbar">
 

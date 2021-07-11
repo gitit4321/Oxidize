@@ -5,6 +5,7 @@ import MathGame from './MathGame';
 import Scenario1 from './Scenario1';
 import MemoryGame from './MemoryGame';
 import GameOver from './GameOver';
+import GameWon from './GameWon';
 
 const GameDiv = props => {
     const [lives, setLives] = useState(9);
@@ -34,6 +35,7 @@ const GameDiv = props => {
     <LightGame handleFailure={handleWrongAnswer} counter={countUp} />,
     <MemoryGame handleFailure={handleWrongAnswer} counter={countUp} />,
     <MathGame handleFailure={handleWrongAnswer} counter={countUp} />,
+    <GameWon restart={restartGame}/>,
     <GameOver restart={restartGame}/>
     ]
     

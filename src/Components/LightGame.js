@@ -32,9 +32,10 @@ const Board = (props) => {
     const handleClick = (i) => {
         const newState = nodeValue.slice();
         if (newState[i] === 'O') {
-            alert('Nice One!')
+            alert('Nice One!');
+            props.counter();
         }
-        else { props.handleFailure() }
+        else { props.handleFailure() };
     }
 
     const renderNode = (i) => {
@@ -70,7 +71,7 @@ const LightGame = (props) => {
     return (
         <div className="game">
             <div className="game-board">
-                <Board handleFailure={props.handleFailure} />
+                <Board handleFailure={props.handleFailure} counter={props.counter} />
             </div>
             <div className="game-info">
                 <div>{/*status */}</div>

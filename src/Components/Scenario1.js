@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-
+import Choice from './Choice';
 const Scenario1 = (props) => {
     return (
-        <p>Gandalf offers you the One Ring. It is cool to the touch and dark script can be seen around it's edges.</p>
-
+        <div>
+            <p>Gandalf offers you the One Ring. It is cool to the touch and dark script can be seen around it's edges.</p>
+            <Choice click={props.handleFailure} value="Run Away" />
+            <Choice click={props.counter} value="Take the ring" />
+        </div>
     )
 }
 

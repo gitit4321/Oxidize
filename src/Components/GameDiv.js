@@ -14,13 +14,16 @@ const GameDiv = props => {
     let handleWrongAnswer = () => {
         setGameState(gameState - 1)
     }
-
-    let scarr = [<Scenario1 />, <Scenario2 />, <LightGame handleFailure={handleWrongAnswer} />, <MathGame />, <MemoryGame />]
-    const scenarioChanger = (index, arr) => {
-        return arr[index]
-    }
     const countUp = () => {
         setCount(counter + 1)
+    }
+
+    let scarr = [<Scenario1 handleFailure={handleWrongAnswer} counter={countUp} />,
+    <LightGame handleFailure={handleWrongAnswer} counter={countUp} />,
+    <MathGame handleFailure={handleWrongAnswer} counter={countUp} />,
+    <MemoryGame handleFailure={handleWrongAnswer} counter={countUp} />]
+    const scenarioChanger = (index, arr) => {
+        return arr[index]
     }
 
     return (
@@ -28,9 +31,6 @@ const GameDiv = props => {
             <div className="scenarios">
                 {scenarioChanger(counter, scarr)}
             </div>
-
-            <Choice click={handleWrongAnswer} value="Run Away" />
-            <Choice click={countUp} value="Take the ring" />
             <p>lives = {gameState}</p>
         </div>
     );

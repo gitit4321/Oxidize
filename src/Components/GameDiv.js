@@ -20,8 +20,8 @@ const GameDiv = props => {
 
     let scarr = [<Scenario1 handleFailure={handleWrongAnswer} counter={countUp} />,
     <LightGame handleFailure={handleWrongAnswer} counter={countUp} />,
-    <MathGame handleFailure={handleWrongAnswer} counter={countUp} />,
     <MemoryGame handleFailure={handleWrongAnswer} counter={countUp} />,
+    <MathGame handleFailure={handleWrongAnswer} counter={countUp} />,
     ]
     const scenarioChanger = (index, arr) => {
         return arr[index]

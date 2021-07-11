@@ -129,7 +129,12 @@ class MemoryGame extends React.Component {
       this.props.handleFailure()
     }
 
-    if (cardsWon.length === cardArray.length / 2) {
+    // if (cardsWon.length === cardArray.length / 2) {
+    //   status = 'Congratulations, you win!';
+    //   this.props.counter()
+    // }
+
+    if (cardsWon.length === 1) {
       status = 'Congratulations, you win!';
       this.props.counter()
     }

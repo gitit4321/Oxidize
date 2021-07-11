@@ -123,6 +123,7 @@ class MemoryGame extends React.Component {
     } else {
       cardArray[id1]['isFaceDown'] = true;
       cardArray[id2]['isFaceDown'] = true;
+
       alert('Sorry, try again.');
       this.props.handleFailure()
     }
@@ -156,15 +157,18 @@ class MemoryGame extends React.Component {
       cardArray: cardArray,
       cardsChosen: cardsChosen,
       cardsChosenId: cardsChosenId,
-    }, () => {this.checkTwoCards(cardsChosen, cardsChosenId)});
+    }, () => { this.checkTwoCards(cardsChosen, cardsChosenId) });
   }
 
   checkTwoCards(cardsChosen, cardsChosenId) {
-    if (cardsChosen.length === 2) {
-      let id1 = cardsChosenId[0];
-      let id2 = cardsChosenId[1];
-      this.checkForMatch(id1, id2, cardsChosen[0], cardsChosen[1]);
-    }
+    setTimeout(() => {
+      if (cardsChosen.length === 2) {
+        let id1 = cardsChosenId[0];
+        let id2 = cardsChosenId[1];
+        this.checkForMatch(id1, id2, cardsChosen[0], cardsChosen[1]);
+      }
+    }, 500);
+
   }
 
   handleClick(i) {

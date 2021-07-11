@@ -14,20 +14,24 @@ const Node = (props) => {
 const Board = (props) => {
 
     const [nodeValue, setValue] = useState(Array(10).fill('eye'));
+    let [startState, setStart] = useState(0)
 
     const lightChanger = () => {
         let interarr = [230, 240, 210, 230, 220, 210, 236, 268, 200, 230];
         let i = 0;
-        let changeState = () => {
-            let newState = nodeValue.slice();
-            newState[i] = 'ring'
-            setValue(newState)
+        if (startState === 0) {
+            setStart(startState = 1)
+            let changeState = () => {
+                let newState = nodeValue.slice();
+                newState[i] = 'ring'
+                setValue(newState)
+            }
+            setInterval(() => {
+                changeState();
+                i++
+                if (i > interarr.length) { i = 0 }
+            }, interarr[i]);
         }
-        setInterval(() => {
-            changeState();
-            i++
-            if (i > interarr.length) { i = 0 }
-        }, interarr[i]);
     }
 
     const handleClick = (i) => {

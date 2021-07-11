@@ -47,7 +47,6 @@ const MathGame = (props) => {
             [arr[currentIndex], arr[randomIndex]] = [
                 arr[randomIndex], arr[currentIndex]];
         }
-
         return arr;
     }
 

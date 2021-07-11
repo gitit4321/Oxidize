@@ -129,10 +129,10 @@ class MemoryGame extends React.Component {
       this.props.handleFailure()
     }
 
-    // if (cardsWon.length === cardArray.length / 2) {
-    //   status = 'Congratulations, you win!';
-    //   this.props.counter()
-    // }
+     if (cardsWon.length === cardArray.length / 2) {
+       status = 'Congratulations, you win!';
+       this.props.counter()
+     }
 
     if (cardsWon.length === 1) {
       status = 'Congratulations, you win!';
@@ -163,15 +163,14 @@ class MemoryGame extends React.Component {
       cardArray: cardArray,
       cardsChosen: cardsChosen,
       cardsChosenId: cardsChosenId,
-    });
+    }, () => {this.checkTwoCards(cardsChosen, cardsChosenId)});
+  }
 
+  checkTwoCards(cardsChosen, cardsChosenId) {
     if (cardsChosen.length === 2) {
       let id1 = cardsChosenId[0];
       let id2 = cardsChosenId[1];
-      setTimeout(
-        this.checkForMatch(id1, id2, cardsChosen[0], cardsChosen[1]),
-        1000
-      );
+      this.checkForMatch(id1, id2, cardsChosen[0], cardsChosen[1]);
     }
   }
 

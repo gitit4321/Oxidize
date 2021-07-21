@@ -1,3 +1,6 @@
+## Play the game!
+http://oxidize.herokuapp.com/
+
 ## Installation
 Make sure you have Node installed. Copy the repo into a directory on your machine and run npm install. Then run npm start and it will open up localhost:3000 with the react app in chrome. 
 

@@ -1,3 +1,5 @@
+## Winner of OSU's 48 hour sprint summer hackathon
+
 ## Play the game!
 http://oxidize.herokuapp.com/
 

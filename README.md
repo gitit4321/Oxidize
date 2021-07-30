@@ -2,6 +2,7 @@
 https://devpost.com/software/frodo-s-nine-lives
 
 ## Play the game!
+Our react app is hosted on Heroku and you can try it out by following the link below!
 http://oxidize.herokuapp.com/
 
 ## Installation

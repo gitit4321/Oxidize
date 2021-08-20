@@ -10,7 +10,7 @@ import GameWon from './GameWon';
 const GameDiv = props => {
     const [lives, setLives] = useState(9);
     // const [scenarios, setScenarios] = useState([<Scenario1 />, <Scenario2 />])
-    const [counter, setCount] = useState(10);
+    const [counter, setCount] = useState(0);
 
     useEffect(() => {
         if (lives == 0) {

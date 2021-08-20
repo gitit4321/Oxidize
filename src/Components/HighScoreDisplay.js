@@ -11,7 +11,6 @@ const HighScoreDisplay = (props) => {
             </div>
         </div>
 
-
     )
 };
 

@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react';
-
+import { useHistory } from 'react-router-dom'
 const HighScoreForm = (props) => {
+
+    const history = useHistory();
+
 
     const nameRef = useRef();
     const scoreRef = useRef();
@@ -15,8 +18,15 @@ const HighScoreForm = (props) => {
             name: enteredName,
             score: enteredScore
         }
-
+        fetch('https://frodos-lives-default-rtdb.firebaseio.com/scores.json', {
+            method: 'POST',
+            body: JSON.stringify(player),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(() => {
+            history.replace('/highscores')
+        })
         console.log(player)
+
     }
 
     return (
